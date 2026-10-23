@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reading the figures — Watershed case</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Asap:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/watershed.css">
+<style>
+  .controls { display: flex; gap: 12px; }
+  .link-btn { min-height: 44px; padding: 0 4px; background: none; border: 0; color: var(--navy); text-decoration: underline; cursor: pointer; }
+  .figs { list-style: none; margin: 8px 0 0; padding: 0; border-top: 2px solid var(--navy-deep); }
+  .figs li { border-bottom: 1px solid var(--line); }
+  .figs summary { display: flex; align-items: center; gap: 16px; min-height: 56px; padding: 14px 0; }
+  .figs .name { flex: 1; font-size: 1.15rem; font-weight: 500; color: var(--navy-deep); }
+  .figs .chev { flex: 0 0 auto; width: 32px; height: 32px; border-radius: 50%; border: 1px solid var(--navy); display: grid; place-items: center; color: var(--navy); transition: transform .15s ease; }
+  .figs details[open] .chev { transform: rotate(180deg); }
+  .figs .body { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px 28px; padding: 0 0 18px; }
+  .figs .label { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+  .figs .body p { font-size: 0.97rem; }
+</style>
+</head>
+<body>
+<main class="wrap" aria-labelledby="t">
+  <h2 id="t" class="sr-only">Reading the figures</h2>
+  <div class="controls">
+    <button class="link-btn" type="button" id="open-all">Open all</button>
+    <button class="link-btn" type="button" id="close-all">Close all</button>
+  </div>
+  <ul class="figs" id="figs"></ul>
+</main>
+<script src="data.js"></script>
+<script src="assets/case.js"></script>
+<script>
+(function () {
+  var root = document.getElementById("figs");
+  var c = WS.getCase();
+  if (!c) { WS.missing(root); return; }
+  root.innerHTML = c.data.figures.filter(WS.shown).map(function (f) {
+    return '<li><details><summary><span class="name">' + WS.esc(f.figure) +
+      '</span><span class="chev" aria-hidden="true">⌄</span></summary><div class="body">' +
+      '<div><p class="label">What it measures</p><p>' + WS.cite(f.measures) + "</p></div>" +
+      '<div><p class="label">What it does not show</p><p>' + WS.cite(f.notShow) + "</p></div>" +
+      "</div></details></li>";
+  }).join("");
+  var all = Array.prototype.slice.call(root.querySelectorAll("details"));
+  document.getElementById("open-all").addEventListener("click", function () { all.forEach(function (d) { d.open = true; }); });
+  document.getElementById("close-all").addEventListener("click", function () { all.forEach(function (d) { d.open = false; }); });
+})();
+</script>
+</body>
+</html>
