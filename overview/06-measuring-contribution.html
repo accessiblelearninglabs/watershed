@@ -35,9 +35,7 @@
 </head>
 <body>
 <main class="wrap" aria-labelledby="t">
-  <p class="eyebrow">My practice</p>
-  <h2 id="t">How I know it is working, and that it does not depend on me</h2>
-  <p class="lede">Each case reports against six levels. Select a level for an example indicator.</p>
+  <h2 id="t" class="sr-only">How I know it is working, and that it does not depend on me</h2>
 
   <ul class="levels" role="list">
     <li class="level"><button type="button" aria-expanded="false" aria-controls="e1"><span class="name">Reach</span><span class="ask">Did it reach the people the default usually misses?</span><span class="ex" id="e1" hidden><strong>Example:</strong> accessible formats available at release, not on request.</span></button></li>
@@ -77,6 +75,22 @@
     out.textContent = n === 3 ? "3 of 3. This work does not depend on one person." : n + " of 3. Each unchecked item is the next design task.";
   }
   boxes.forEach(function (x) { x.addEventListener("change", update); });
+})();
+</script>
+<script>
+/* Reports this graphic's height to the embedding page so its iframe can resize. */
+(function () {
+  if (window.parent === window) return;
+  var last = 0;
+  function send() {
+    var h = Math.ceil(document.body.getBoundingClientRect().height);
+    if (h !== last) { last = h; window.parent.postMessage({ watershedFrame: location.pathname.split("/").pop(), height: h }, "*"); }
+  }
+  if ("ResizeObserver" in window) new ResizeObserver(send).observe(document.body);
+  window.addEventListener("load", send);
+  document.addEventListener("toggle", send, true);
+  document.addEventListener("click", function () { setTimeout(send, 50); });
+  send();
 })();
 </script>
 </body>

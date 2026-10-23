@@ -24,8 +24,7 @@
 </head>
 <body>
 <main class="wrap" aria-labelledby="t">
-  <p class="eyebrow">The one problem</p>
-  <h2 id="t">What is known does not reliably become what people can do.</h2>
+  <h2 id="t" class="sr-only">What is known does not reliably become what people can do.</h2>
 
   <div class="stats">
     <section class="stat" aria-labelledby="s1">
@@ -80,5 +79,21 @@
     </ol>
   </footer>
 </main>
+<script>
+/* Reports this graphic's height to the embedding page so its iframe can resize. */
+(function () {
+  if (window.parent === window) return;
+  var last = 0;
+  function send() {
+    var h = Math.ceil(document.body.getBoundingClientRect().height);
+    if (h !== last) { last = h; window.parent.postMessage({ watershedFrame: location.pathname.split("/").pop(), height: h }, "*"); }
+  }
+  if ("ResizeObserver" in window) new ResizeObserver(send).observe(document.body);
+  window.addEventListener("load", send);
+  document.addEventListener("toggle", send, true);
+  document.addEventListener("click", function () { setTimeout(send, 50); });
+  send();
+})();
+</script>
 </body>
 </html>

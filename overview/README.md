@@ -11,26 +11,14 @@ Six interactive graphics for the Watershed overview page on andrearobin.com. Eac
 | `05-theory-of-change.html` | Theory of change | Select a condition to see what it assumes |
 | `06-measuring-contribution.html` | Measuring contribution | Expand each level; try the handover test |
 | `index.html` | — | Links to all six |
+| `EMBED.md` | — | Embed codes for the overview page |
 | `assets/watershed.css` | — | Shared palette and type |
 
 ## Embedding
 
-With GitHub Pages enabled on this repository, each graphic is served at:
+`EMBED.md` holds a ready-to-paste code for each graphic. Each frame resizes itself to its content as readers open sections or change screen width; if scripts are removed, the fixed heights in the codes apply.
 
-```
-https://accessiblelearninglabs.github.io/watershed/overview/<file>.html
-```
-
-Embed one in a page with an iframe, giving it a title for screen readers:
-
-```html
-<iframe src="https://accessiblelearninglabs.github.io/watershed/overview/02-the-map.html"
-        title="Watershed: the map" width="100%" height="520" style="border:0"></iframe>
-```
-
-Suggested starting heights (adjust to taste): one problem 460, map 520, questions 380, cases 760, theory of change 720, measuring contribution 700.
-
-The case links in `04-the-cases.html` point to `../cases/<name>.html`. Change them if the case pages live elsewhere.
+The case links in `04-the-cases.html` open the case pages on andrearobin.com in the full window.
 
 ## Palette
 

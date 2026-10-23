@@ -22,7 +22,7 @@
 html { -webkit-text-size-adjust: 100%; }
 body {
   margin: 0;
-  padding: 24px 16px;
+  padding: 6px 4px 10px;
   background: var(--white);
   color: var(--ink);
   font-family: inherit;
@@ -30,6 +30,8 @@ body {
   line-height: 1.6;
 }
 .wrap { max-width: 960px; margin: 0 auto; }
+/* The section heading and description live on the host page; content starts flush. */
+.wrap > h2.sr-only + * { margin-top: 0 !important; }
 h1, h2, h3, p { margin: 0; }
 h2 { font-size: 1.6rem; font-weight: 500; line-height: 1.25; }
 h3 { font-size: 1.15rem; font-weight: 500; line-height: 1.3; }

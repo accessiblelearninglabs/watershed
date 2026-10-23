@@ -66,9 +66,7 @@
 </head>
 <body>
 <main class="wrap" aria-labelledby="t">
-  <p class="eyebrow">The map</p>
-  <h2 id="t">Five tributaries, one river</h2>
-  <p class="lede">Select a stage to see its place in the flow.</p>
+  <h2 id="t" class="sr-only">Five tributaries, one river</h2>
 
   <div class="map">
     <ol class="flow" aria-label="Stages in order of flow">
@@ -116,6 +114,22 @@
   }
   buttons.forEach(function (b) { b.addEventListener("click", function () { select(b.dataset.key); }); });
   select("1");
+})();
+</script>
+<script>
+/* Reports this graphic's height to the embedding page so its iframe can resize. */
+(function () {
+  if (window.parent === window) return;
+  var last = 0;
+  function send() {
+    var h = Math.ceil(document.body.getBoundingClientRect().height);
+    if (h !== last) { last = h; window.parent.postMessage({ watershedFrame: location.pathname.split("/").pop(), height: h }, "*"); }
+  }
+  if ("ResizeObserver" in window) new ResizeObserver(send).observe(document.body);
+  window.addEventListener("load", send);
+  document.addEventListener("toggle", send, true);
+  document.addEventListener("click", function () { setTimeout(send, 50); });
+  send();
 })();
 </script>
 </body>

@@ -24,9 +24,7 @@
 </head>
 <body>
 <main class="wrap" aria-labelledby="t">
-  <p class="eyebrow">How each case is read</p>
-  <h2 id="t">Three questions, asked of every case</h2>
-  <p class="lede">Each question is asked twice: what is, and what could be.</p>
+  <h2 id="t" class="sr-only">Three questions, asked of every case</h2>
 
   <div class="toggle" role="group" aria-label="Show questions about">
     <button type="button" aria-pressed="true" data-mode="is">What is</button>
@@ -52,6 +50,22 @@
   }
   buttons.forEach(function (b) { b.addEventListener("click", function () { set(b.dataset.mode); }); });
   set("is");
+})();
+</script>
+<script>
+/* Reports this graphic's height to the embedding page so its iframe can resize. */
+(function () {
+  if (window.parent === window) return;
+  var last = 0;
+  function send() {
+    var h = Math.ceil(document.body.getBoundingClientRect().height);
+    if (h !== last) { last = h; window.parent.postMessage({ watershedFrame: location.pathname.split("/").pop(), height: h }, "*"); }
+  }
+  if ("ResizeObserver" in window) new ResizeObserver(send).observe(document.body);
+  window.addEventListener("load", send);
+  document.addEventListener("toggle", send, true);
+  document.addEventListener("click", function () { setTimeout(send, 50); });
+  send();
 })();
 </script>
 </body>
