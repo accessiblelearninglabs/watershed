@@ -16,7 +16,7 @@ Six interactive graphics for the Watershed overview page on andrearobin.com. Eac
 
 ## Embedding
 
-`EMBED.md` holds a ready-to-paste code for each graphic. Each frame resizes itself to its content as readers open sections or change screen width; if scripts are removed, the fixed heights in the codes apply.
+`EMBED.md` holds a ready-to-paste code for each graphic. Each frame's height adjusts to screen width with inline CSS, so no script is needed on the host page, and frames scroll if a reader opens several sections.
 
 The case links in `04-the-cases.html` open the case pages on andrearobin.com in the full window.
 

@@ -22,14 +22,14 @@
 html { -webkit-text-size-adjust: 100%; }
 body {
   margin: 0;
-  padding: 6px 4px 10px;
+  padding: 14px 10px 16px;
   background: var(--white);
   color: var(--ink);
   font-family: inherit;
   font-size: 17px;
   line-height: 1.6;
 }
-.wrap { max-width: 960px; margin: 0 auto; }
+.wrap { max-width: 960px; margin: 0; }
 /* The section heading and description live on the host page; content starts flush. */
 .wrap > h2.sr-only + * { margin-top: 0 !important; }
 h1, h2, h3, p { margin: 0; }

@@ -1,115 +1,41 @@
 # Watershed: embed codes
 
-One code per section of the overview page. Paste each into an HTML or embed block directly below that section's heading and description, which are written on the Format page itself.
+Paste each code into an HTML or embed block directly below that section's heading and description on the Format page.
 
-Each code is self-contained: the iframe, plus a short script that lets the frame resize itself as readers open sections or view on a phone. The script runs only once, however many codes are on the page.
+Each frame's height adjusts to the screen width using inline CSS alone, so it fits whether or not the site keeps scripts. Frames also scroll, so nothing is cut off when a reader opens several sections at once.
 
-If the site builder removes scripts, the iframes still work at the fixed heights given; on phones their content scrolls inside the frame.
-
-## The one problem — replaces the three figures
+## The one problem
 
 ```html
-<iframe class="watershed-frame" src="https://accessiblelearninglabs.github.io/watershed/overview/01-the-one-problem.html" title="Watershed: the one problem" width="100%" height="520" style="border:0;display:block;width:100%" loading="lazy"></iframe>
-<script>
-if (!window.watershedResize) {
-  window.watershedResize = true;
-  window.addEventListener("message", function (e) {
-    var d = e.data;
-    if (!d || typeof d.height !== "number" || !d.watershedFrame) return;
-    document.querySelectorAll("iframe.watershed-frame").forEach(function (f) {
-      if (f.contentWindow === e.source) f.style.height = d.height + "px";
-    });
-  });
-}
-</script>
+<iframe src="https://accessiblelearninglabs.github.io/watershed/overview/01-the-one-problem.html" title="Watershed: the one problem" width="100%" height="531" style="border:0;display:block;width:100%;height:max(531px, calc(1838px - 135vw));overflow:auto" scrolling="auto" loading="lazy"></iframe>
 ```
 
-## The map — replaces the five tributaries diagram
+## The map
 
 ```html
-<iframe class="watershed-frame" src="https://accessiblelearninglabs.github.io/watershed/overview/02-the-map.html" title="Watershed: the map" width="100%" height="470" style="border:0;display:block;width:100%" loading="lazy"></iframe>
-<script>
-if (!window.watershedResize) {
-  window.watershedResize = true;
-  window.addEventListener("message", function (e) {
-    var d = e.data;
-    if (!d || typeof d.height !== "number" || !d.watershedFrame) return;
-    document.querySelectorAll("iframe.watershed-frame").forEach(function (f) {
-      if (f.contentWindow === e.source) f.style.height = d.height + "px";
-    });
-  });
-}
-</script>
+<iframe src="https://accessiblelearninglabs.github.io/watershed/overview/02-the-map.html" title="Watershed: the map" width="100%" height="495" style="border:0;display:block;width:100%;height:max(495px, calc(1009px - 52.86vw));overflow:auto" scrolling="auto" loading="lazy"></iframe>
 ```
 
-## How each case is read — replaces the three questions
+## How each case is read
 
 ```html
-<iframe class="watershed-frame" src="https://accessiblelearninglabs.github.io/watershed/overview/03-three-questions.html" title="Watershed: three questions" width="100%" height="230" style="border:0;display:block;width:100%" loading="lazy"></iframe>
-<script>
-if (!window.watershedResize) {
-  window.watershedResize = true;
-  window.addEventListener("message", function (e) {
-    var d = e.data;
-    if (!d || typeof d.height !== "number" || !d.watershedFrame) return;
-    document.querySelectorAll("iframe.watershed-frame").forEach(function (f) {
-      if (f.contentWindow === e.source) f.style.height = d.height + "px";
-    });
-  });
-}
-</script>
+<iframe src="https://accessiblelearninglabs.github.io/watershed/overview/03-three-questions.html" title="Watershed: three questions" width="100%" height="241" style="border:0;display:block;width:100%;height:max(241px, calc(656px - 31.67vw));overflow:auto" scrolling="auto" loading="lazy"></iframe>
 ```
 
-## The cases — replaces the five case cards
+## The cases
 
 ```html
-<iframe class="watershed-frame" src="https://accessiblelearninglabs.github.io/watershed/overview/04-the-cases.html" title="Watershed: the cases" width="100%" height="740" style="border:0;display:block;width:100%" loading="lazy"></iframe>
-<script>
-if (!window.watershedResize) {
-  window.watershedResize = true;
-  window.addEventListener("message", function (e) {
-    var d = e.data;
-    if (!d || typeof d.height !== "number" || !d.watershedFrame) return;
-    document.querySelectorAll("iframe.watershed-frame").forEach(function (f) {
-      if (f.contentWindow === e.source) f.style.height = d.height + "px";
-    });
-  });
-}
-</script>
+<iframe src="https://accessiblelearninglabs.github.io/watershed/overview/04-the-cases.html" title="Watershed: the cases" width="100%" height="744" style="border:0;display:block;width:100%;height:max(744px, calc(2363px - 295vw), calc(1233px - 54.72vw));overflow:auto" scrolling="auto" loading="lazy"></iframe>
 ```
 
-## Theory of change — replaces the If / Then / And table
+## Theory of change
 
 ```html
-<iframe class="watershed-frame" src="https://accessiblelearninglabs.github.io/watershed/overview/05-theory-of-change.html" title="Watershed: theory of change" width="100%" height="750" style="border:0;display:block;width:100%" loading="lazy"></iframe>
-<script>
-if (!window.watershedResize) {
-  window.watershedResize = true;
-  window.addEventListener("message", function (e) {
-    var d = e.data;
-    if (!d || typeof d.height !== "number" || !d.watershedFrame) return;
-    document.querySelectorAll("iframe.watershed-frame").forEach(function (f) {
-      if (f.contentWindow === e.source) f.style.height = d.height + "px";
-    });
-  });
-}
-</script>
+<iframe src="https://accessiblelearninglabs.github.io/watershed/overview/05-theory-of-change.html" title="Watershed: theory of change" width="100%" height="758" style="border:0;display:block;width:100%;height:max(758px, calc(2214px - 233.75vw), calc(1325px - 59.67vw));overflow:auto" scrolling="auto" loading="lazy"></iframe>
 ```
 
-## My practice — replaces the six levels
+## My practice
 
 ```html
-<iframe class="watershed-frame" src="https://accessiblelearninglabs.github.io/watershed/overview/06-measuring-contribution.html" title="Watershed: measuring contribution" width="100%" height="340" style="border:0;display:block;width:100%" loading="lazy"></iframe>
-<script>
-if (!window.watershedResize) {
-  window.watershedResize = true;
-  window.addEventListener("message", function (e) {
-    var d = e.data;
-    if (!d || typeof d.height !== "number" || !d.watershedFrame) return;
-    document.querySelectorAll("iframe.watershed-frame").forEach(function (f) {
-      if (f.contentWindow === e.source) f.style.height = d.height + "px";
-    });
-  });
-}
-</script>
+<iframe src="https://accessiblelearninglabs.github.io/watershed/overview/06-measuring-contribution.html" title="Watershed: measuring contribution" width="100%" height="294" style="border:0;display:block;width:100%;height:max(294px, calc(949px - 60.83vw), calc(1360px - 126.67vw));overflow:auto" scrolling="auto" loading="lazy"></iframe>
 ```
