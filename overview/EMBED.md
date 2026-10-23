@@ -96,10 +96,10 @@ if (!window.watershedResize) {
 </script>
 ```
 
-## My practice — replaces the six levels and the handover test
+## My practice — replaces the six levels
 
 ```html
-<iframe class="watershed-frame" src="https://accessiblelearninglabs.github.io/watershed/overview/06-measuring-contribution.html" title="Watershed: measuring contribution" width="100%" height="650" style="border:0;display:block;width:100%" loading="lazy"></iframe>
+<iframe class="watershed-frame" src="https://accessiblelearninglabs.github.io/watershed/overview/06-measuring-contribution.html" title="Watershed: measuring contribution" width="100%" height="340" style="border:0;display:block;width:100%" loading="lazy"></iframe>
 <script>
 if (!window.watershedResize) {
   window.watershedResize = true;

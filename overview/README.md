@@ -9,7 +9,7 @@ Six interactive graphics for the Watershed overview page on andrearobin.com. Eac
 | `03-three-questions.html` | How each case is read | Switch between *What is* and *What could be* |
 | `04-the-cases.html` | The cases | Open a case to see its ceiling and link |
 | `05-theory-of-change.html` | Theory of change | Select a condition to see what it assumes |
-| `06-measuring-contribution.html` | Measuring contribution | Expand each level; try the handover test |
+| `06-measuring-contribution.html` | Measuring contribution | Expand each level for an example |
 | `index.html` | — | Links to all six |
 | `EMBED.md` | — | Embed codes for the overview page |
 | `assets/watershed.css` | — | Shared palette and type |
