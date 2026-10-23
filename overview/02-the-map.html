@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The map — Watershed</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Asap:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/watershed.css">
+<style>
+  .map { margin-top: 24px; }
+  .flow { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; position: relative; }
+  .flow li { position: relative; }
+  /* connector arrows between stages */
+  .flow li:not(:last-child)::after {
+    content: "→"; position: absolute; top: 20px; right: -14px; width: 16px; text-align: center; font-size: 1.2rem; line-height: 1; color: var(--slate);
+  }
+  .node {
+    width: 100%; min-height: 150px; display: flex; flex-direction: column; align-items: center; gap: 10px;
+    padding: 0 4px 12px; background: none; border: 0; cursor: pointer; text-align: center; border-radius: var(--radius);
+  }
+  .dot {
+    width: 68px; height: 68px; border-radius: 50%; display: grid; place-items: center;
+    font-weight: 600; font-size: 1.3rem; color: var(--white); background: var(--navy);
+    transition: transform .15s ease, box-shadow .15s ease;
+  }
+  .node[data-tone="blue"] .dot { background: var(--blue); }
+  .node[data-tone="river"] .dot { background: var(--navy-deep); width: 76px; height: 76px; margin-top: -4px; }
+  .node .text { display: flex; flex-direction: column; align-items: center; gap: 2px; }
+  .node .label { font-size: 0.95rem; font-weight: 500; line-height: 1.3; color: var(--ink); }
+  .node .role { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+  .node[aria-pressed="true"] .dot { box-shadow: 0 0 0 4px var(--white), 0 0 0 7px var(--navy-deep); transform: scale(1.06); }
+  .node:hover .dot { transform: scale(1.04); }
+
+  /* feedback loop: a U from stage 4 back to stage 1 */
+  .loop { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; margin-top: 4px; }
+  .loop-line { grid-column: 1 / 5; height: 22px; margin: 0 calc(50% / 4 - 6px); border: 2px solid var(--slate); border-top: 0; border-radius: 0 0 14px 14px; position: relative; }
+  .loop-line::before { content: ""; position: absolute; left: -7px; top: -2px; border: 6px solid transparent; border-bottom: 8px solid var(--slate); border-top: 0; }
+  .loop-label { grid-column: 1 / 5; text-align: center; font-size: 0.85rem; color: var(--muted); margin-top: 6px; }
+
+  .climate {
+    margin-top: 18px; width: 100%; display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px;
+    padding: 14px 16px; min-height: 44px; border: 2px dashed var(--slate); background: var(--white);
+    border-radius: var(--radius); text-align: left; cursor: pointer;
+  }
+  .climate[aria-pressed="true"] { border-style: solid; border-color: var(--navy-deep); background: var(--tint); }
+  .climate .role { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+  .climate .label { font-weight: 500; }
+
+  .detail { margin-top: 18px; min-height: 120px; }
+  .detail h3 { margin-top: 4px; }
+  .detail p.q { margin-top: 6px; }
+
+  @media (max-width: 680px) {
+    .flow { grid-template-columns: 1fr; gap: 8px; }
+    .flow li:not(:last-child)::after { content: "↓"; top: auto; bottom: -12px; left: 22px; right: auto; font-size: 1rem; }
+    .node { flex-direction: row; min-height: 0; text-align: left; gap: 14px; padding: 4px; }
+    .node .dot, .node[data-tone="river"] .dot { width: 52px; height: 52px; margin: 0; flex: 0 0 auto; }
+    .node .text { align-items: flex-start; }
+    .loop-line { display: none; }
+    .loop { grid-template-columns: 1fr; }
+    .loop-label { grid-column: 1; text-align: left; }
+  }
+</style>
+</head>
+<body>
+<main class="wrap" aria-labelledby="t">
+  <p class="eyebrow">The map</p>
+  <h2 id="t">Five tributaries, one river</h2>
+  <p class="lede">Select a stage to see its place in the flow.</p>
+
+  <div class="map">
+    <ol class="flow" aria-label="Stages in order of flow">
+      <li><button class="node" type="button" aria-pressed="true" data-key="1"><span class="dot" aria-hidden="true">1</span><span class="text"><span class="role">Source</span><span class="label">Getting evidence into practice</span></span></button></li>
+      <li><button class="node" type="button" aria-pressed="false" data-key="2"><span class="dot" aria-hidden="true">2</span><span class="text"><span class="role">Who can use it</span><span class="label">Access that does not depend on asking</span></span></button></li>
+      <li><button class="node" type="button" aria-pressed="false" data-key="3" data-tone="blue"><span class="dot" aria-hidden="true">3</span><span class="text"><span class="role">Who carries it</span><span class="label">Preparing the people who carry care</span></span></button></li>
+      <li><button class="node" type="button" aria-pressed="false" data-key="4" data-tone="blue"><span class="dot" aria-hidden="true">4</span><span class="text"><span class="role">Feedback</span><span class="label">Knowing whether it worked</span></span></button></li>
+      <li><button class="node" type="button" aria-pressed="false" data-key="river" data-tone="river"><span class="dot" aria-hidden="true">≈</span><span class="text"><span class="role">The river</span><span class="label">People able to act on what is known</span></span></button></li>
+    </ol>
+
+    <div class="loop" aria-hidden="true">
+      <div class="loop-line"></div>
+      <p class="loop-label">↺ What stage 4 finds returns to stage 1</p>
+    </div>
+    <p class="sr-only">Each stage flows into the next. What stage 4 finds returns to stage 1.</p>
+
+    <button class="climate" type="button" aria-pressed="false" data-key="5">
+      <span class="role">5 · The climate</span>
+      <span class="label">Learning through the generative AI transition</span>
+    </button>
+
+    <section class="detail panel" aria-live="polite" aria-labelledby="d-title">
+      <p class="eyebrow" id="d-role"></p>
+      <h3 id="d-title"></h3>
+      <p class="q" id="d-text"></p>
+    </section>
+  </div>
+</main>
+
+<script>
+(function () {
+  var data = {
+    "1": { role: "Stage 1 · The source", title: "Getting evidence into practice", text: "Research becomes something people can use where they work." },
+    "2": { role: "Stage 2 · Who can use it", title: "Access that does not depend on asking", text: "Learning works for disabled people from the first draft, without depending on a request." },
+    "3": { role: "Stage 3 · Who carries it", title: "Preparing the people who carry care", text: "Community health workers and other non-specialist providers are prepared, and supported after training." },
+    "4": { role: "Stage 4 · Feedback", title: "Knowing whether it worked", text: "Organizations learn which programs change practice. What they learn returns to stage 1." },
+    "river": { role: "The river", title: "People able to act on what is known", text: "Where the four stages lead. Each stage decides how much is lost on the way." },
+    "5": { role: "Stage 5 · The climate", title: "Learning through the generative AI transition", text: "Changes how people learn and are assessed at every stage at once." }
+  };
+  var buttons = Array.prototype.slice.call(document.querySelectorAll("[data-key]"));
+  var role = document.getElementById("d-role"), title = document.getElementById("d-title"), text = document.getElementById("d-text");
+  function select(key) {
+    buttons.forEach(function (b) { b.setAttribute("aria-pressed", String(b.dataset.key === key)); });
+    role.textContent = data[key].role; title.textContent = data[key].title; text.textContent = data[key].text;
+  }
+  buttons.forEach(function (b) { b.addEventListener("click", function () { select(b.dataset.key); }); });
+  select("1");
+})();
+</script>
+</body>
+</html>

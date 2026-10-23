@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Three questions — Watershed</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Asap:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/watershed.css">
+<style>
+  .toggle { display: inline-flex; margin-top: 20px; border: 1px solid var(--navy); border-radius: var(--radius); overflow: hidden; }
+  .toggle button { min-height: 44px; padding: 0 18px; border: 0; background: var(--white); color: var(--navy); font-weight: 500; cursor: pointer; }
+  .toggle button + button { border-left: 1px solid var(--navy); }
+  .toggle button[aria-pressed="true"] { background: var(--navy); color: var(--white); }
+  .qs { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 28px; margin-top: 28px; }
+  .q { border-top: 3px solid var(--navy); padding-top: 16px; }
+  .q:nth-child(2) { border-top-color: var(--blue); }
+  .q:nth-child(3) { border-top-color: var(--slate); }
+  .q h3 { margin-bottom: 8px; }
+  .q .ask { font-size: 1rem; }
+  .q .mode { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+</style>
+</head>
+<body>
+<main class="wrap" aria-labelledby="t">
+  <p class="eyebrow">How each case is read</p>
+  <h2 id="t">Three questions, asked of every case</h2>
+  <p class="lede">Each question is asked twice: what is, and what could be.</p>
+
+  <div class="toggle" role="group" aria-label="Show questions about">
+    <button type="button" aria-pressed="true" data-mode="is">What is</button>
+    <button type="button" aria-pressed="false" data-mode="could">What could be</button>
+  </div>
+
+  <div class="qs" aria-live="polite">
+    <section class="q" aria-labelledby="q1"><h3 id="q1">Scale</h3><p class="mode" data-role="mode"></p><p class="ask" data-is="How many people does it affect, and how much?" data-could="If it were solved, how much better would things be, and for how many people?"></p></section>
+    <section class="q" aria-labelledby="q2"><h3 id="q2">Neglectedness</h3><p class="mode" data-role="mode"></p><p class="ask" data-is="How many resources already go to it?" data-could="Where would one more contributor add most?"></p></section>
+    <section class="q" aria-labelledby="q3"><h3 id="q3">Solvability</h3><p class="mode" data-role="mode"></p><p class="ask" data-is="How much of what remains would more effort solve?" data-could="What would it take?"></p></section>
+  </div>
+</main>
+
+<script>
+(function () {
+  var buttons = Array.prototype.slice.call(document.querySelectorAll("[data-mode]"));
+  var asks = Array.prototype.slice.call(document.querySelectorAll(".ask"));
+  var modes = Array.prototype.slice.call(document.querySelectorAll("[data-role='mode']"));
+  function set(mode) {
+    buttons.forEach(function (b) { b.setAttribute("aria-pressed", String(b.dataset.mode === mode)); });
+    asks.forEach(function (a) { a.textContent = a.dataset[mode]; });
+    modes.forEach(function (m) { m.textContent = mode === "is" ? "What is" : "What could be"; });
+  }
+  buttons.forEach(function (b) { b.addEventListener("click", function () { set(b.dataset.mode); }); });
+  set("is");
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The cases — Watershed</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Asap:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/watershed.css">
+<style>
+  .cases { list-style: none; margin: 24px 0 0; padding: 0; border-top: 2px solid var(--navy-deep); }
+  .case { border-bottom: 1px solid var(--line); }
+  .case summary { display: grid; grid-template-columns: 64px 1fr auto; gap: 4px 20px; align-items: start; padding: 22px 0; min-height: 44px; }
+  .num { font-size: 2rem; font-weight: 500; line-height: 1; color: var(--blue); }
+  .case:nth-child(5) .num { color: var(--slate); }
+  .head { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+  .head .q { font-size: 0.98rem; }
+  .head .title { font-size: 1.15rem; font-weight: 500; line-height: 1.3; }
+  .chev { width: 32px; height: 32px; border-radius: 50%; border: 1px solid var(--navy); display: grid; place-items: center; color: var(--navy); margin-top: 6px; transition: transform .15s ease; }
+  .case[open] .chev { transform: rotate(180deg); }
+  .body { padding: 0 0 24px 84px; display: flex; flex-wrap: wrap; gap: 14px 24px; align-items: center; }
+  .ceiling { flex: 999 1 380px; color: var(--muted); font-size: 0.95rem; }
+  .ceiling strong { color: var(--navy-deep); font-weight: 600; }
+  .act { flex: 1 0 auto; display: flex; flex-direction: column; gap: 6px; align-items: flex-start; }
+  .status { font-size: 0.8rem; color: var(--muted); }
+  .btn { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 18px; border: 1px solid var(--navy-deep); color: var(--navy-deep); text-decoration: none; font-weight: 500; border-radius: var(--radius); }
+  .btn:hover { background: var(--navy-deep); color: var(--white); }
+  .controls { margin-top: 16px; display: flex; gap: 12px; flex-wrap: wrap; }
+  .link-btn { min-height: 44px; padding: 0 4px; background: none; border: 0; color: var(--navy); text-decoration: underline; cursor: pointer; }
+  @media (max-width: 600px) {
+    .case summary { grid-template-columns: 44px 1fr auto; gap: 4px 12px; }
+    .num { font-size: 1.5rem; }
+    .body { padding-left: 0; }
+  }
+</style>
+</head>
+<body>
+<main class="wrap" aria-labelledby="t">
+  <p class="eyebrow">The cases</p>
+  <h2 id="t">Five cases, each read the same way</h2>
+  <p class="lede">Open a case to see what solving it would make possible.</p>
+  <div class="controls">
+    <button class="link-btn" type="button" id="open-all">Open all</button>
+    <button class="link-btn" type="button" id="close-all">Close all</button>
+  </div>
+
+  <ol class="cases">
+    <li><details class="case">
+      <summary><span class="num" aria-hidden="true">01</span><span class="head"><span class="eyebrow">The source</span><span class="title">Getting evidence into practice</span><span class="q">How does research become something people can use where they work?</span></span><span class="chev" aria-hidden="true">⌄</span></summary>
+      <div class="body"><p class="ceiling"><strong>Ceiling:</strong> evidence arrives with a plan for how it will be used, shaped by the barriers of the place it is going.</p><div class="act"><span class="status">Working draft</span><a class="btn" href="../cases/evidence-into-practice.html">Read the case <span aria-hidden="true">→</span></a></div></div>
+    </details></li>
+
+    <li><details class="case">
+      <summary><span class="num" aria-hidden="true">02</span><span class="head"><span class="eyebrow">Who can use it</span><span class="title">Access that does not depend on asking</span><span class="q">How can learning reach disabled people without depending on a request?</span></span><span class="chev" aria-hidden="true">⌄</span></summary>
+      <div class="body"><p class="ceiling"><strong>Ceiling:</strong> materials disabled people can use on the same day as everyone else, with accommodation kept for needs that are genuinely individual.</p><div class="act"><span class="status">Working draft</span><a class="btn" href="../cases/access-without-asking.html">Read the case <span aria-hidden="true">→</span></a></div></div>
+    </details></li>
+
+    <li><details class="case">
+      <summary><span class="num" aria-hidden="true">03</span><span class="head"><span class="eyebrow">Who carries it</span><span class="title">Preparing the people who carry care</span><span class="q">How are community health workers and other non-specialist providers prepared, and supported after training?</span></span><span class="chev" aria-hidden="true">⌄</span></summary>
+      <div class="body"><p class="ceiling"><strong>Ceiling:</strong> training and supervision designed as one programme, so skills hold in routine care.</p><div class="act"><span class="status">Working draft</span><a class="btn" href="../cases/preparing-people-who-carry-care.html">Read the case <span aria-hidden="true">→</span></a></div></div>
+    </details></li>
+
+    <li><details class="case">
+      <summary><span class="num" aria-hidden="true">04</span><span class="head"><span class="eyebrow">The feedback loop</span><span class="title">Knowing whether it worked</span><span class="q">How can organizations find out which programs change practice, and act on what they find?</span></span><span class="chev" aria-hidden="true">⌄</span></summary>
+      <div class="body"><p class="ceiling"><strong>Ceiling:</strong> evaluation built in at design, measured by what people do afterwards, and returned to the evidence base.</p><div class="act"><span class="status">Working draft</span><a class="btn" href="../cases/knowing-whether-it-worked.html">Read the case <span aria-hidden="true">→</span></a></div></div>
+    </details></li>
+
+    <li><details class="case">
+      <summary><span class="num" aria-hidden="true">05</span><span class="head"><span class="eyebrow">The climate</span><span class="title">Learning through the generative AI transition</span><span class="q">How can assessment still show what a person can do?</span></span><span class="chev" aria-hidden="true">⌄</span></summary>
+      <div class="body"><p class="ceiling"><strong>Ceiling:</strong> AI used in ways that build learning people keep, with credentials that stay fair and valid for every learner.</p><div class="act"><span class="status">Working draft</span><a class="btn" href="../cases/learning-through-ai.html">Read the case <span aria-hidden="true">→</span></a></div></div>
+    </details></li>
+  </ol>
+</main>
+
+<script>
+(function () {
+  var all = Array.prototype.slice.call(document.querySelectorAll("details.case"));
+  document.getElementById("open-all").addEventListener("click", function () { all.forEach(function (d) { d.open = true; }); });
+  document.getElementById("close-all").addEventListener("click", function () { all.forEach(function (d) { d.open = false; }); });
+})();
+</script>
+</body>
+</html>

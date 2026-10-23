@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Theory of change — Watershed</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Asap:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/watershed.css">
+<style>
+  .toc { margin-top: 24px; border: 1px solid var(--line); border-radius: var(--radius); }
+  .row { display: grid; grid-template-columns: 80px 1fr; gap: 8px 24px; padding: 20px 24px; }
+  .row + .row { border-top: 1px solid var(--line); }
+  .key { font-size: 0.8rem; font-weight: 600; letter-spacing: 0.14em; color: var(--navy); padding-top: 4px; }
+  .conds { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+  .cond { width: 100%; display: flex; align-items: center; gap: 12px; min-height: 44px; padding: 8px 12px; text-align: left; background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); cursor: pointer; }
+  .cond:hover { border-color: var(--navy); }
+  .cond[aria-pressed="true"] { background: var(--tint); border-color: var(--navy-deep); }
+  .cond .n { flex: 0 0 auto; width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; background: var(--navy); color: var(--white); font-weight: 600; font-size: 1.2rem; }
+  .cond[data-tone="blue"] .n { background: var(--blue); }
+  .cond[data-tone="slate"] .n { background: var(--slate); }
+  .assume { margin-top: 12px; }
+  .assume .eyebrow { margin-bottom: 4px; }
+  .note { margin-top: 16px; font-size: 0.92rem; color: var(--muted); max-width: 44rem; }
+  @media (max-width: 600px) { .row { grid-template-columns: 1fr; padding: 16px; } }
+</style>
+</head>
+<body>
+<main class="wrap" aria-labelledby="t">
+  <p class="eyebrow">The theory of change</p>
+  <h2 id="t">How the five connect</h2>
+  <p class="lede">Select a condition to see what it assumes.</p>
+
+  <div class="toc">
+    <div class="row">
+      <p class="key">IF</p>
+      <div>
+        <p class="sr-only">Learning is designed with all five of the following conditions:</p>
+        <ul class="conds" aria-label="Conditions">
+          <li><button class="cond" type="button" aria-pressed="true" data-k="1"><span class="n" aria-hidden="true">1</span><span>learning is designed from synthesised evidence and local barriers,</span></button></li>
+          <li><button class="cond" type="button" aria-pressed="false" data-k="2"><span class="n" aria-hidden="true">2</span><span>with access built in from the first draft and disabled people leading,</span></button></li>
+          <li><button class="cond" type="button" aria-pressed="false" data-k="3" data-tone="blue"><span class="n" aria-hidden="true">3</span><span>with support that continues after training,</span></button></li>
+          <li><button class="cond" type="button" aria-pressed="false" data-k="4" data-tone="blue"><span class="n" aria-hidden="true">4</span><span>evaluated by what changes in practice,</span></button></li>
+          <li><button class="cond" type="button" aria-pressed="false" data-k="5" data-tone="slate"><span class="n" aria-hidden="true">5</span><span>and assessed in ways that stay valid as AI changes how people learn,</span></button></li>
+        </ul>
+        <div class="assume panel" aria-live="polite">
+          <p class="eyebrow" id="a-label"></p>
+          <p id="a-text"></p>
+        </div>
+      </div>
+    </div>
+    <div class="row"><p class="key">THEN</p><p>more people can act on what is known, more of the time,</p></div>
+    <div class="row"><p class="key">AND</p><p>the field learns faster which designs work, because what evaluation finds returns to the evidence.</p></div>
+  </div>
+  <p class="note">This holds only where conditions outside design are in place or held by partners: funded posts, devices and connectivity, time, supplies and management support. It describes a contribution, not a sole cause.</p>
+</main>
+
+<script>
+(function () {
+  var data = {
+    "1": ["Case 1 · Evidence into practice", "Systematic reviews, not single studies, are what transfers, and local barriers are diagnosed before teaching begins."],
+    "2": ["Case 2 · Access without asking", "Learners' devices and assistive technology can use what is built, and those who need built-in features use them."],
+    "3": ["Case 3 · The people who carry care", "Funded roles and supplies exist for trained workers, and supervision is resourced alongside training."],
+    "4": ["Case 4 · Knowing whether it worked", "Evaluation findings reach the people who can act on them, and they act."],
+    "5": ["Case 5 · The AI transition", "Learning gains seen in short trials last, and access to tools is fair across learners."]
+  };
+  var btns = Array.prototype.slice.call(document.querySelectorAll(".cond"));
+  var label = document.getElementById("a-label"), text = document.getElementById("a-text");
+  function select(k) {
+    btns.forEach(function (b) { b.setAttribute("aria-pressed", String(b.dataset.k === k)); });
+    label.textContent = "Assumes · " + data[k][0];
+    text.textContent = data[k][1];
+  }
+  btns.forEach(function (b) { b.addEventListener("click", function () { select(b.dataset.k); }); });
+  select("1");
+})();
+</script>
+</body>
+</html>

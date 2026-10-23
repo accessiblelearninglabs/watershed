@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Measuring contribution — Watershed</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Asap:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/watershed.css">
+<style>
+  .levels { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); margin-top: 24px; }
+  .level { background: var(--white); }
+  .level button { width: 100%; min-height: 100%; display: flex; flex-direction: column; gap: 4px; padding: 18px 20px; text-align: left; background: none; border: 0; cursor: pointer; }
+  .level button:hover { background: var(--tint); }
+  .level button[aria-expanded="true"] { background: var(--tint); }
+  .level .name { font-weight: 600; color: var(--navy-deep); display: flex; justify-content: space-between; gap: 8px; }
+  .level .name::after { content: "+"; color: var(--navy); }
+  .level button[aria-expanded="true"] .name::after { content: "−"; }
+  .level .ask { font-size: 0.95rem; color: var(--muted); }
+  .level .ex { font-size: 0.9rem; margin-top: 6px; padding-top: 8px; border-top: 1px solid var(--tint-2); }
+  .level .ex strong { font-weight: 600; color: var(--navy); }
+
+  .handover { margin-top: 24px; background: var(--navy-deep); color: var(--white); border-radius: var(--radius); padding: 24px 28px; }
+  .handover .eyebrow { color: #dce5ee; }
+  .handover .big { font-size: 1.15rem; line-height: 1.55; margin-top: 8px; }
+  .handover fieldset { border: 0; margin: 18px 0 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+  .handover legend { font-size: 0.9rem; color: #dce5ee; margin-bottom: 6px; }
+  .handover label { display: flex; align-items: center; gap: 12px; min-height: 44px; cursor: pointer; }
+  .handover input { width: 22px; height: 22px; accent-color: var(--blue); flex: 0 0 auto; }
+  .handover .result { margin-top: 12px; font-size: 0.95rem; color: #dce5ee; }
+  .handover :focus-visible { outline-color: var(--white); }
+  .handover a { color: var(--white); }
+</style>
+</head>
+<body>
+<main class="wrap" aria-labelledby="t">
+  <p class="eyebrow">My practice</p>
+  <h2 id="t">How I know it is working, and that it does not depend on me</h2>
+  <p class="lede">Each case reports against six levels. Select a level for an example indicator.</p>
+
+  <ul class="levels" role="list">
+    <li class="level"><button type="button" aria-expanded="false" aria-controls="e1"><span class="name">Reach</span><span class="ask">Did it reach the people the default usually misses?</span><span class="ex" id="e1" hidden><strong>Example:</strong> accessible formats available at release, not on request.</span></button></li>
+    <li class="level"><button type="button" aria-expanded="false" aria-controls="e2"><span class="name">Adoption</span><span class="ask">Are others choosing to use or adapt it?</span><span class="ex" id="e2" hidden><strong>Example:</strong> known adaptations of a published resource or method.</span></button></li>
+    <li class="level"><button type="button" aria-expanded="false" aria-controls="e3"><span class="name">Practice</span><span class="ask">Did what people do change, checked at 60 to 90 days?</span><span class="ex" id="e3" hidden><strong>Example:</strong> a follow-up on behaviour, not satisfaction.</span></button></li>
+    <li class="level"><button type="button" aria-expanded="false" aria-controls="e4"><span class="name">Maintenance</span><span class="ask">Is it kept current by someone other than me?</span><span class="ex" id="e4" hidden><strong>Example:</strong> a named owner and a scheduled update cycle.</span></button></li>
+    <li class="level"><button type="button" aria-expanded="false" aria-controls="e5"><span class="name">Embedding</span><span class="ask">Is it in a template, procedure or standard?</span><span class="ex" id="e5" hidden><strong>Example:</strong> part of onboarding, a course template or a written procedure.</span></button></li>
+    <li class="level"><button type="button" aria-expanded="false" aria-controls="e6"><span class="name">Field</span><span class="ask">Is it being cited, critiqued or built on?</span><span class="ex" id="e6" hidden><strong>Example:</strong> citations, published critiques, or contributions to a standard.</span></button></li>
+  </ul>
+
+  <section class="handover" aria-labelledby="h">
+    <p class="eyebrow" id="h">The handover test, once a year</p>
+    <p class="big">If I stepped away for twelve months, what would still be running, who would maintain it, and would it still be improving?</p>
+    <fieldset>
+      <legend>Try it on any piece of work:</legend>
+      <label><input type="checkbox" class="ho"> It would still be running</label>
+      <label><input type="checkbox" class="ho"> Someone named would maintain it</label>
+      <label><input type="checkbox" class="ho"> It would still be improving</label>
+    </fieldset>
+    <p class="result" id="ho-result" aria-live="polite">0 of 3. Each unchecked item is the next design task.</p>
+  </section>
+</main>
+
+<script>
+(function () {
+  Array.prototype.slice.call(document.querySelectorAll(".level button")).forEach(function (b) {
+    b.addEventListener("click", function () {
+      var open = b.getAttribute("aria-expanded") === "true";
+      b.setAttribute("aria-expanded", String(!open));
+      document.getElementById(b.getAttribute("aria-controls")).hidden = open;
+    });
+  });
+  var boxes = Array.prototype.slice.call(document.querySelectorAll(".ho"));
+  var out = document.getElementById("ho-result");
+  function update() {
+    var n = boxes.filter(function (x) { return x.checked; }).length;
+    out.textContent = n === 3 ? "3 of 3. This work does not depend on one person." : n + " of 3. Each unchecked item is the next design task.";
+  }
+  boxes.forEach(function (x) { x.addEventListener("change", update); });
+})();
+</script>
+</body>
+</html>
