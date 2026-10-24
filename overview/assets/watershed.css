@@ -1,14 +1,12 @@
-/* Watershed overview graphics — shared styles
-   Palette drawn from the andrearobin.com range map.
-   Large-text-only colours are marked; all small text meets WCAG 2.2 AA (4.5:1) on white. */
+
 
 :root {
-  --navy: #436486;        /* primary; text-safe */
-  --navy-deep: #2c3f55;   /* headings, dark surfaces; text-safe */
-  --blue: #5685b3;        /* large text, numerals, fills only */
-  --slate: #728399;       /* large text, fills only */
-  --ink: #26333f;         /* body text */
-  --muted: #4e5f74;       /* secondary text; text-safe */
+  --navy: #436486;        
+  --navy-deep: #2c3f55;   
+  --blue: #5685b3;        
+  --slate: #728399;       
+  --ink: #26333f;         
+  --muted: #4e5f74;       
   --line: #d5dde6;
   --tint: #eef3f8;
   --tint-2: #dbe5ef;
@@ -30,7 +28,7 @@ body {
   line-height: 1.6;
 }
 .wrap { max-width: 960px; margin: 0; }
-/* The section heading and description live on the host page; content starts flush. */
+
 .wrap > h2.sr-only + * { margin-top: 0 !important; }
 h1, h2, h3, p { margin: 0; }
 h2 { font-size: 1.6rem; font-weight: 500; line-height: 1.25; }

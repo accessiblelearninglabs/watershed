@@ -40,13 +40,10 @@
   var buttons = Array.prototype.slice.call(document.querySelectorAll("[data-mode]"));
   function render(mode) {
     buttons.forEach(function (b) { b.setAttribute("aria-pressed", String(b.dataset.mode === mode)); });
-    root.innerHTML = c.data.questions.map(function (q) {
+    root.innerHTML = c.data.questions.filter(function (q) { return mode !== "is" || q.findings.length; }).map(function (q) {
       var body;
       if (mode === "is") {
-        var items = q.findings.filter(WS.shown);
-        body = items.length
-          ? "<ul>" + items.map(function (f) { return "<li>" + WS.cite(f.text) + "</li>"; }).join("") + "</ul>"
-          : '<p class="cite-note">The evidence for this question is being checked.</p>';
+        body = "<ul>" + q.findings.map(function (f) { return "<li>" + WS.cite(f.text) + "</li>"; }).join("") + "</ul>";
       } else {
         body = '<p class="could">' + WS.cite(q.could.charAt(0).toUpperCase() + q.could.slice(1)) + "</p>";
       }

@@ -54,11 +54,11 @@
   if (!c) { WS.missing(chain); return; }
   var d = c.data, w = d.weakest;
   chain.innerHTML = d.links.map(function (l, i) {
-    var weak = !w.verify && (i + 1) === w.from;
+    var weak = w && (i + 1) === w.from;
     return '<li' + (weak ? ' class="weak-after"' : "") + '><button class="step" type="button" aria-pressed="false" data-i="' + i + '">' +
       '<span class="n" aria-hidden="true">' + (i + 1) + '</span><span class="s">' + WS.esc(l.stage) + "</span></button></li>";
   }).join("");
-  if (!w.verify) {
+  if (w) {
     document.getElementById("weak-wrap").innerHTML =
       '<button class="weak-btn" type="button" aria-pressed="false" data-i="weak"><span aria-hidden="true">⇢</span> Weakest link: ' +
       w.from + " to " + w.to + "</button>";
@@ -77,8 +77,8 @@
     eyebrow.textContent = "Link " + (Number(i) + 1) + " of 5";
     title.textContent = l.stage;
     var what = l.what.charAt(0).toUpperCase() + l.what.slice(1);
-    text.innerHTML = WS.cite(what) + (l.verify ? "" : '<span class="assume" style="display:block"><strong>Assumes:</strong> ' +
-      WS.cite(l.assumes.replace(/^Assumes\s+/, "")) + "</span>");
+    text.innerHTML = WS.cite(what) + '<span class="assume" style="display:block"><strong>Assumes:</strong> ' +
+      WS.cite(l.assumes.replace(/^Assumes\s+/, "")) + "</span>";
   }
   buttons.forEach(function (b) { b.addEventListener("click", function () { select(b.dataset.i === "weak" ? "weak" : Number(b.dataset.i)); }); });
   select(0);

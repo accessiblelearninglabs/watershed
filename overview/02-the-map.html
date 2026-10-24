@@ -12,7 +12,7 @@
   .map { margin-top: 24px; }
   .flow { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; position: relative; }
   .flow li { position: relative; }
-  /* connector arrows between stages */
+  
   .flow li:not(:last-child)::after {
     content: "→"; position: absolute; top: 20px; right: -14px; width: 16px; text-align: center; font-size: 1.2rem; line-height: 1; color: var(--slate);
   }
@@ -33,7 +33,6 @@
   .node[aria-pressed="true"] .dot { box-shadow: 0 0 0 4px var(--white), 0 0 0 7px var(--navy-deep); transform: scale(1.06); }
   .node:hover .dot { transform: scale(1.04); }
 
-  /* feedback loop: a U from stage 4 back to stage 1 */
   .loop { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; margin-top: 4px; }
   .loop-line { grid-column: 1 / 5; height: 22px; margin: 0 calc(50% / 4 - 6px); border: 2px solid var(--slate); border-top: 0; border-radius: 0 0 14px 14px; position: relative; }
   .loop-line::before { content: ""; position: absolute; left: -7px; top: -2px; border: 6px solid transparent; border-bottom: 8px solid var(--slate); border-top: 0; }
@@ -117,7 +116,7 @@
 })();
 </script>
 <script>
-/* Reports this graphic's height to the embedding page so its iframe can resize. */
+
 (function () {
   if (window.parent === window) return;
   var last = 0;
