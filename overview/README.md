@@ -44,7 +44,7 @@ Blue and slate appear only at large-text sizes (WCAG 2.2 AA requires 3:1 there).
 
 ## Sources
 
-Cited in `01-the-one-problem.html`:
+Listed in `01-the-one-problem.html` and `watershed-linear.html`:
 
 1. McGlynn, E. A., et al. (2003). The quality of health care delivered to adults in the United States. *New England Journal of Medicine, 348*(26), 2635–2645. https://doi.org/10.1056/NEJMsa022615
 2. Thornicroft, G., et al. (2017). Undertreatment of people with major depressive disorder in 21 countries. *British Journal of Psychiatry, 210*(2), 119–124. https://doi.org/10.1192/bjp.bp.116.188078
