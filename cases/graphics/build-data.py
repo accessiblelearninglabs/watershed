@@ -52,7 +52,7 @@ def build(md):
     tq = section(md, "The three questions")
     questions = []
     for name in ("Scale", "Neglectedness", "Solvability"):
-        m = re.search(r"\*\*" + name + r"\*\*\n(.*?)\n\*What could be:\*\s*(.*?)\n", tq, re.S)
+        m = re.search(r"^(?:\*\*)?" + name + r"(?:\*\*)?\n(.*?)\n\*?What could be:\*?\s*(.*?)\n", tq, re.S | re.M)
         items = []
         for line in m.group(1).splitlines():
             if line.startswith("- "):
@@ -70,7 +70,7 @@ def build(md):
     # theory of change
     toc = section(md, "Theory of change")
     links = []
-    for m in re.finditer(r"^\d\. \*\*(\w+):\*\* (.*?) \*Assumes (.*?)\*(.*)$", toc, re.M):
+    for m in re.finditer(r"^\d\. (?:\*\*)?(\w+):(?:\*\*)? (.*?) \*?Assumes (.*?)\*?()$", toc, re.M):
         stage = m.group(1)
         what, _ = clean(m.group(2))
         assumes, v = clean("Assumes " + m.group(3) + m.group(4))

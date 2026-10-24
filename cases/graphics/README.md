@@ -27,4 +27,4 @@ Any line marked `[verify]` on a case page is carried with `"verify": true` and i
 
 ## Accessibility
 
-Native buttons and disclosure controls, keyboard reachable with visible focus and 44px targets; selected and expanded states use `aria-pressed` and `aria-expanded`; changing panels are announced. Source numbers are announced as "source n". Layouts reflow to one column on phones. Colours and type match the overview graphics.
+Native buttons and disclosure controls, keyboard reachable with visible focus and 44px targets; selected and expanded states use `aria-pressed` and `aria-expanded`; changing panels are announced. Layouts reflow to one column on phones. Colours and type match the overview graphics.

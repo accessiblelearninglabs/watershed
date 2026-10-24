@@ -10,11 +10,11 @@ window.WATERSHED_CASES = {
     "name": "Scale",
     "findings": [
      {
-      "text": "Across 30 conditions, US adults received 54.9% of recommended care, from 78.7% for cataract to 10.5% for alcohol dependence.{2}",
+      "text": "In 2021, about 4.5 billion people, more than half the world's population, were not fully covered by essential health services.",
       "verify": false
      },
      {
-      "text": "In Australia, 57% of 35,573 care encounters were appropriate, ranging from 13% to 90% by condition.{3}",
+      "text": "Even in high-income systems, recommended or appropriate care was delivered in a little over half of measured cases: 54.9% across 30 conditions in the United States, and 57% of 35,573 encounters in Australia.",
       "verify": false
      }
     ],
@@ -25,11 +25,11 @@ window.WATERSHED_CASES = {
     "name": "Neglectedness",
     "findings": [
      {
-      "text": "Evidence on changing managers' and policy-makers' decisions is much weaker than for clinicians.{4}",
+      "text": "Evidence on changing managers' and policy-makers' decisions is much weaker than for clinicians.",
       "verify": false
      },
      {
-      "text": "Few studies of tailored approaches come from low-income countries.{5}",
+      "text": "Few studies of tailored approaches come from low-income countries.",
       "verify": false
      }
     ],
@@ -40,46 +40,52 @@ window.WATERSHED_CASES = {
     "name": "Solvability",
     "findings": [
      {
-      "text": "Audit and feedback improved recommended practice by a median 4.3 percentage points, educational meetings by 4.0 and outreach visits by 5.6.{6,7,8}",
+      "text": "Audit and feedback improved recommended practice by a median 4.3 percentage points, educational meetings by 4.0 and outreach visits by 5.6.",
       "verify": false
      },
      {
-      "text": "Educational meetings changed patient outcomes by a median of 0.1 points, and adding components did not reliably add effect.{7,4}",
+      "text": "Educational meetings changed patient outcomes by a median of 0.1 points, and adding components did not reliably add effect.",
       "verify": false
      }
     ],
-    "could": "tailoring to local barriers gave a slight improvement.{5} The open task is learning which tailoring works, and why.",
+    "could": "tailoring to local barriers gave a slight improvement. The open task is learning which tailoring works, and why.",
     "couldVerify": false
    }
   ],
   "figures": [
    {
+    "figure": "4.5 billion not fully covered",
+    "measures": "A global estimate from WHO and World Bank monitoring of essential health service coverage",
+    "notShow": "Whether the care people did receive was of good quality",
+    "verify": false
+   },
+   {
     "figure": "54.9% of recommended care",
-    "measures": "Care received against recommendations, across 30 conditions in the United States{2}",
+    "measures": "Care received against recommendations, across 30 conditions in the United States",
     "notShow": "Care in other countries, or care today",
     "verify": false
    },
    {
     "figure": "57% appropriate",
-    "measures": "35,573 encounters reviewed in Australia{3}",
+    "measures": "35,573 encounters reviewed in Australia",
     "notShow": "A national census of care",
     "verify": false
    },
    {
     "figure": "17 years from research to practice",
-    "measures": "Several studies that reached a similar figure while measuring different stages{9}",
+    "measures": "Several studies that reached a similar figure while measuring different stages",
     "notShow": "A single measured average",
     "verify": false
    },
    {
     "figure": "85% of research is wasted",
-    "measures": "A worked estimate of waste in how studies are designed, published and reported{10}",
+    "measures": "A worked estimate of waste in how studies are designed, published and reported",
     "notShow": "Waste in uptake",
     "verify": false
    },
    {
     "figure": "60-30-10",
-    "measures": "A commentary drawing together studies of guideline care, low-value care and harm{11}",
+    "measures": "A commentary drawing together studies of guideline care, low-value care and harm",
     "notShow": "A pooled estimate with confidence intervals",
     "verify": false
    }
@@ -88,38 +94,38 @@ window.WATERSHED_CASES = {
    {
     "stage": "Inputs",
     "what": "up-to-date systematic reviews and local performance data.",
-    "assumes": "Assumes reviews, not single studies, are what to transfer.{4}",
+    "assumes": "Assumes reviews, not single studies, are what to transfer.",
     "verify": false
    },
    {
     "stage": "Activities",
     "what": "diagnose local barriers with staff, then tailor teaching and support.",
-    "assumes": "Assumes tailoring to barriers adds effect.{5}",
+    "assumes": "Assumes tailoring to barriers adds effect.",
     "verify": false
    },
    {
     "stage": "Outputs",
     "what": "protocols, outreach, and feedback with targets and action plans.",
-    "assumes": "Assumes feedback works best with targets and a low baseline.{6}",
+    "assumes": "Assumes feedback works best with targets and a low baseline.",
     "verify": false
    },
    {
     "stage": "Outcomes",
     "what": "practitioners follow recommended practice more often, measured locally.",
-    "assumes": "Assumes typical gains of 4 to 6 percentage points.{6,7,8}",
+    "assumes": "Assumes typical gains of 4 to 6 percentage points.",
     "verify": false
    },
    {
     "stage": "Impact",
     "what": "better outcomes for patients and learners, not only changed behaviour.",
-    "assumes": "Assumes targeted change can reach outcomes, as it did in stroke care.{1}",
+    "assumes": "Assumes targeted change can reach outcomes, as it did in stroke care.",
     "verify": false
    }
   ],
   "weakest": {
    "from": 4,
    "to": 5,
-   "text": "educational meetings improved practice by a median 4.0 percentage points but patient outcomes by 0.1.{7}",
+   "text": "educational meetings improved practice by a median 4.0 percentage points but patient outcomes by 0.1.",
    "verify": false
   },
   "effort": [
@@ -129,12 +135,12 @@ window.WATERSHED_CASES = {
     "verify": false
    },
    {
-    "less": "Some waste happens upstream, before uptake.{10}",
+    "less": "Some waste happens upstream, before uptake.",
     "more": "Which design decisions sit closest to the practitioner, where uptake is decided?",
     "verify": false
    },
    {
-    "less": "Sending evidence changed nothing.{12}",
+    "less": "Sending evidence changed nothing.",
     "more": "What does active, barrier-targeted support look like at the scale of a sector?",
     "verify": false
    }
@@ -149,11 +155,11 @@ window.WATERSHED_CASES = {
     "name": "Scale",
     "findings": [
      {
-      "text": "About 1.3 billion people, 16% of the world's population, live with significant disability.{1}",
+      "text": "About 1.3 billion people, 16% of the world's population, live with significant disability.",
       "verify": false
      },
      {
-      "text": "About one third of first-year Canadian university students in 2025 reported a disability or impairment, most commonly related to mental health.{2}",
+      "text": "About one third of first-year Canadian university students in 2025 reported a disability or impairment, most commonly related to mental health.",
       "verify": false
      }
     ],
@@ -164,11 +170,11 @@ window.WATERSHED_CASES = {
     "name": "Neglectedness",
     "findings": [
      {
-      "text": "In a US national study, about 35% of students who received disability services in high school disclosed their disability to their college.{3}",
+      "text": "In a US national study, about 35% of students who received disability services in high school disclosed their disability to their college.",
       "verify": true
      },
      {
-      "text": "In 2026, 95.9% of the top million home pages had automatically detectable WCAG failures.{4}",
+      "text": "In 2026, 95.9% of the top million home pages had automatically detectable WCAG failures.",
       "verify": true
      }
     ],
@@ -179,11 +185,11 @@ window.WATERSHED_CASES = {
     "name": "Solvability",
     "findings": [
      {
-      "text": "Supports open to all students, such as tutoring and writing centres, were linked to persistence and completion for students with disabilities.{3}",
+      "text": "Supports open to all students, such as tutoring and writing centres, were linked to persistence and completion for students with disabilities.",
       "verify": true
      },
      {
-      "text": "Evidence for UDL as a whole framework is contested; the studies cited for it mostly support single techniques.{5,6}",
+      "text": "Evidence for UDL as a whole framework is contested; the studies cited for it mostly support single techniques.",
       "verify": false
      }
     ],
@@ -194,31 +200,31 @@ window.WATERSHED_CASES = {
   "figures": [
    {
     "figure": "1.3 billion, 16%",
-    "measures": "A global estimate of significant disability{1}",
+    "measures": "A global estimate of significant disability",
     "notShow": "A precise count",
     "verify": false
    },
    {
     "figure": "One third of first-year students",
-    "measures": "Self-report in a survey of over 11,000 students at 39 universities{2}",
+    "measures": "Self-report in a survey of over 11,000 students at 39 universities",
     "notShow": "All Canadian students, or students at colleges",
     "verify": false
    },
    {
     "figure": "35% disclosed",
-    "measures": "A US national cohort who received services in high school{3}",
+    "measures": "A US national cohort who received services in high school",
     "notShow": "Students never identified in school, or students today",
     "verify": true
    },
    {
     "figure": "95.9% of home pages",
-    "measures": "Errors an automated tool detects on one home page per site{4}",
+    "measures": "Errors an automated tool detects on one home page per site",
     "notShow": "Problems that need human judgement",
     "verify": false
    },
    {
     "figure": "UDL effect sizes",
-    "measures": "Mostly one-group, before-and-after designs{6}",
+    "measures": "Mostly one-group, before-and-after designs",
     "notShow": "That UDL caused the gain",
     "verify": false
    }
@@ -245,7 +251,7 @@ window.WATERSHED_CASES = {
    {
     "stage": "Outcomes",
     "what": "more disabled learners take part and persist without needing to ask.",
-    "assumes": "Assumes universal supports aid persistence.{3}",
+    "assumes": "Assumes universal supports aid persistence.",
     "verify": false
    },
    {
@@ -288,11 +294,11 @@ window.WATERSHED_CASES = {
     "name": "Scale",
     "findings": [
      {
-      "text": "WHO projects a needs-based shortfall of 11.1 million health workers by 2030, increasingly concentrated in the African and Eastern Mediterranean regions.{2}",
+      "text": "WHO projects a needs-based shortfall of 11.1 million health workers by 2030, increasingly concentrated in the African and Eastern Mediterranean regions.",
       "verify": false
      },
      {
-      "text": "The estimate is modelled, and its method paper reports that it is highly sensitive to the assumptions used.{3}",
+      "text": "The estimate is modelled, and its method paper reports that it is highly sensitive to the assumptions used.",
       "verify": false
      }
     ],
@@ -303,11 +309,11 @@ window.WATERSHED_CASES = {
     "name": "Neglectedness",
     "findings": [
      {
-      "text": "WHO's community health worker guideline found the evidence not granular enough to say which training and supervision approaches work best, and found no economic evaluations.{4}",
+      "text": "WHO's community health worker guideline found the evidence not granular enough to say which training and supervision approaches work best, and found no economic evaluations.",
       "verify": false
      },
      {
-      "text": "A review of 39 studies of the Project ECHO telementoring model found one that measured a change in provider behaviour, and six that measured patient outcomes.{5}",
+      "text": "A review of 39 studies of the Project ECHO telementoring model found one that measured a change in provider behaviour, and six that measured patient outcomes.",
       "verify": false
      }
     ],
@@ -318,11 +324,11 @@ window.WATERSHED_CASES = {
     "name": "Solvability",
     "findings": [
      {
-      "text": "Across 82 trials, community-based workers (termed lay health workers in the review) improved childhood vaccination, breastfeeding and tuberculosis cure rates (moderate certainty). Effects on mortality were uncertain.{6}",
+      "text": "Across 82 trials, community-based workers (termed lay health workers in the review) improved childhood vaccination, breastfeeding and tuberculosis cure rates (moderate certainty). Effects on mortality were uncertain.",
       "verify": false
      },
      {
-      "text": "Training or supervision alone improved provider practice by about 10 to 16 percentage points; combined, about 18 to 19; group problem-solving, 28 to 38. Results varied widely.{7}",
+      "text": "Training or supervision alone improved provider practice by about 10 to 16 percentage points; combined, about 18 to 19; group problem-solving, 28 to 38. Results varied widely.",
       "verify": false
      }
     ],
@@ -333,25 +339,25 @@ window.WATERSHED_CASES = {
   "figures": [
    {
     "figure": "11.1 million by 2030",
-    "measures": "A modelled gap between each country's workforce density and a benchmark, projected with fixed assumptions{2,3}",
+    "measures": "A modelled gap between each country's workforce density and a benchmark, projected with fixed assumptions",
     "notShow": "Vacant posts. A different benchmark gives a very different number",
     "verify": false
    },
    {
     "figure": "Shortage trend",
-    "measures": "The modelled shortage has fallen since 2020{3}",
+    "measures": "The modelled shortage has fallen since 2020",
     "notShow": "That need has been met",
     "verify": false
    },
    {
     "figure": "82 trials",
-    "measures": "Outcomes across trials of community-based worker programmes{6}",
+    "measures": "Outcomes across trials of community-based worker programmes",
     "notShow": "Whether trial effects hold in routine services, which often give less support",
     "verify": false
    },
    {
     "figure": "10 to 38 percentage points",
-    "measures": "Gains in provider practice across strategies in low- and middle-income countries{7}",
+    "measures": "Gains in provider practice across strategies in low- and middle-income countries",
     "notShow": "A single expected effect; results varied widely",
     "verify": false
    }
@@ -366,19 +372,19 @@ window.WATERSHED_CASES = {
    {
     "stage": "Activities",
     "what": "brief, task-focused training with regular group supervision.",
-    "assumes": "Assumes training plus supervision outperforms either alone.{7}",
+    "assumes": "Assumes training plus supervision outperforms either alone.",
     "verify": false
    },
    {
     "stage": "Outputs",
     "what": "community health workers delivering a defined protocol, supported after training.",
-    "assumes": "Assumes competency-based preparation is feasible.{4}",
+    "assumes": "Assumes competency-based preparation is feasible.",
     "verify": false
    },
    {
     "stage": "Outcomes",
     "what": "provider practice improves and people's symptoms fall.",
-    "assumes": "Assumes trial gains carry into routine care.{6}",
+    "assumes": "Assumes trial gains carry into routine care.",
     "verify": false
    },
    {
@@ -391,7 +397,7 @@ window.WATERSHED_CASES = {
   "weakest": {
    "from": 4,
    "to": 5,
-   "text": "it depends on funded posts, supplies and management support, which sit outside training.{6}",
+   "text": "it depends on funded posts, supplies and management support, which sit outside training.",
    "verify": true
   },
   "effort": [
@@ -401,12 +407,12 @@ window.WATERSHED_CASES = {
     "verify": false
    },
    {
-    "less": "E-learning and classroom teaching produce about the same knowledge gains.{10}",
+    "less": "E-learning and classroom teaching produce about the same knowledge gains.",
     "more": "Format can be chosen for reach and cost. What design choices change practice, not only knowledge?",
     "verify": false
    },
    {
-    "less": "The larger effects came from supervision and group problem-solving, beyond the training event.{7}",
+    "less": "The larger effects came from supervision and group problem-solving, beyond the training event.",
     "more": "Supervision is a design object. What would it take to design it as carefully as the training?",
     "verify": false
    }
@@ -421,12 +427,16 @@ window.WATERSHED_CASES = {
     "name": "Scale",
     "findings": [
      {
-      "text": "Organizations spend an estimated $399 billion a year on training worldwide.{2}",
+      "text": "Organizations spend an estimated $399 billion a year on training worldwide.",
       "verify": true
      },
      {
-      "text": "Across 162 studies, training produced medium-to-large effects at every level, from reactions to results.{3}",
+      "text": "Across 162 studies, training produced medium-to-large effects at every level, from reactions to results.",
       "verify": true
+     },
+     {
+      "text": "Across 139 government-funded teacher training programmes in 14 countries, most differed sharply from the features of programmes shown to raise learning, with fewer chances to practise and less follow-up.",
+      "verify": false
      }
     ],
     "could": "knowing which programs change practice directs that spending to what works.",
@@ -436,7 +446,11 @@ window.WATERSHED_CASES = {
     "name": "Neglectedness",
     "findings": [
      {
-      "text": "Among 150 Canadian training professionals, organizations evaluated reactions most often and results least. Only behaviour and results evaluation were linked to transfer.{4}",
+      "text": "Few teacher training programmes worldwide are evaluated, and the results of those that are vary widely.",
+      "verify": false
+     },
+     {
+      "text": "Among 150 Canadian training professionals, organizations evaluated reactions most often and results least. Only behaviour and results evaluation were linked to transfer.",
       "verify": true
      }
     ],
@@ -447,11 +461,11 @@ window.WATERSHED_CASES = {
     "name": "Solvability",
     "findings": [
      {
-      "text": "How much learners enjoyed training barely predicted transfer (r = .07); how useful they found it did better (r = .18).{1}",
+      "text": "How much learners enjoyed training barely predicted transfer (r = .07); how useful they found it did better (r = .18).",
       "verify": false
      },
      {
-      "text": "Supervisor support correlated with transfer at r = .31, and peer support at r = .14.{5}",
+      "text": "Supervisor support correlated with transfer at r = .31, and peer support at r = .14.",
       "verify": false
      }
     ],
@@ -462,20 +476,26 @@ window.WATERSHED_CASES = {
   "figures": [
    {
     "figure": "Only 10% of training transfers",
-    "measures": "An estimate offered by a practitioner in 1982, later repeated as a measurement{6,7}",
+    "measures": "An estimate offered by a practitioner in 1982, later repeated as a measurement",
     "notShow": "Any measurement of transfer",
     "verify": false
    },
    {
     "figure": "54% evaluate behaviour",
-    "measures": "Self-reports from 779 professionals in a 2019 survey; \"uses\" means at least sometimes{8}",
+    "measures": "Self-reports from 779 professionals in a 2019 survey; \"uses\" means at least sometimes",
     "notShow": "How often evaluation is done well, or for most programs",
     "verify": false
    },
    {
     "figure": "$399 billion",
-    "measures": "A market model built from industry research and economic data{2}",
+    "measures": "A market model built from industry research and economic data",
     "notShow": "A census of spending, or how much is wasted",
+    "verify": false
+   },
+   {
+    "figure": "139 programmes in 14 countries",
+    "measures": "Features of government-funded teacher training at scale, compared with 33 rigorously evaluated programmes",
+    "notShow": "Learning outcomes of the at-scale programmes themselves",
     "verify": false
    }
   ],
@@ -483,25 +503,25 @@ window.WATERSHED_CASES = {
    {
     "stage": "Inputs",
     "what": "an evaluation plan agreed with managers before design begins.",
-    "assumes": "Assumes evaluation serves named users and their decisions.{9}",
+    "assumes": "Assumes evaluation serves named users and their decisions.",
     "verify": false
    },
    {
     "stage": "Activities",
     "what": "ask how learners will use what they learned, then check practice at 60 to 90 days.",
-    "assumes": "Assumes usefulness ratings predict transfer better than enjoyment.{1}",
+    "assumes": "Assumes usefulness ratings predict transfer better than enjoyment.",
     "verify": false
    },
    {
     "stage": "Outputs",
     "what": "contrasting cases of success and non-success, with the barriers each names.",
-    "assumes": "Assumes contrasting cases reveal what enables or blocks use.{10}",
+    "assumes": "Assumes contrasting cases reveal what enables or blocks use.",
     "verify": false
    },
    {
     "stage": "Outcomes",
     "what": "managers close support gaps and the design is revised.",
-    "assumes": "Assumes supervisor support is linked to transfer.{5}",
+    "assumes": "Assumes supervisor support is linked to transfer.",
     "verify": false
    },
    {
@@ -519,17 +539,17 @@ window.WATERSHED_CASES = {
   },
   "effort": [
    {
-    "less": "Training already works on average.{3}",
+    "less": "Training already works on average.",
     "more": "Averages hide which programs work. What would let each organization find out about its own?",
     "verify": false
    },
    {
-    "less": "Much of what predicts transfer lies in the work environment.{5}",
+    "less": "Much of what predicts transfer lies in the work environment.",
     "more": "Supervisors can be part of the design. What role would they hold before and after training?",
     "verify": false
    },
    {
-    "less": "Interventions before and after training show small effects on transfer.{14}",
+    "less": "Interventions before and after training show small effects on transfer.",
     "more": "Small effects compound across programs. Which ones are cheapest to build in?",
     "verify": false
    }
@@ -544,11 +564,11 @@ window.WATERSHED_CASES = {
     "name": "Scale",
     "findings": [
      {
-      "text": "94% of UK full-time undergraduates use generative AI to help with assessed work, up from 89% in 2025.{2}",
+      "text": "94% of UK full-time undergraduates use generative AI to help with assessed work, up from 89% in 2025.",
       "verify": false
      },
      {
-      "text": "AI detectors misclassified essays by non-native English writers as AI-written 61% of the time, while essays by US eighth-graders were classified almost perfectly.{3}",
+      "text": "AI detectors misclassified essays by non-native English writers as AI-written 61% of the time, while essays by US eighth-graders were classified almost perfectly.",
       "verify": false
      }
     ],
@@ -559,11 +579,11 @@ window.WATERSHED_CASES = {
     "name": "Neglectedness",
     "findings": [
      {
-      "text": "Only 23% of UK higher education teaching staff said AI training was available to them, while 37% had already brought AI into their teaching.{4}",
+      "text": "Only 23% of UK higher education teaching staff said AI training was available to them, while 37% had already brought AI into their teaching.",
       "verify": false
      },
      {
-      "text": "Policy activity is substantial: the OECD describes five emerging policy areas for generative AI in higher education.{5}",
+      "text": "Policy activity is substantial: the OECD describes five emerging policy areas for generative AI in higher education.",
       "verify": false
      }
     ],
@@ -574,11 +594,11 @@ window.WATERSHED_CASES = {
     "name": "Solvability",
     "findings": [
      {
-      "text": "An unrestricted chatbot raised practice grades by 48% but lowered later unaided scores by 17%. A tutor with guardrails raised practice grades by 127% and largely avoided the harm.{1}",
+      "text": "An unrestricted chatbot raised practice grades by 48% but lowered later unaided scores by 17%. A tutor with guardrails raised practice grades by 127% and largely avoided the harm.",
       "verify": false
      },
      {
-      "text": "A carefully built AI tutor produced learning gains of 0.63 standard deviations over in-class active learning, across two lessons.{6}",
+      "text": "A carefully built AI tutor produced learning gains of 0.63 standard deviations over in-class active learning, across two lessons.",
       "verify": false
      }
     ],
@@ -589,19 +609,19 @@ window.WATERSHED_CASES = {
   "figures": [
    {
     "figure": "94% use AI for assessed work",
-    "measures": "Self-report from UK full-time undergraduates in one survey; 12% report putting AI-generated text into assessed work{2}",
+    "measures": "Self-report from UK full-time undergraduates in one survey; 12% report putting AI-generated text into assessed work",
     "notShow": "Use for every task, or how often",
     "verify": false
    },
    {
     "figure": "Detector misclassification, 61%",
-    "measures": "Seven detectors, about 90 essays per group, mostly older tools{3}",
+    "measures": "Seven detectors, about 90 essays per group, mostly older tools",
     "notShow": "Whether current detectors share the bias. The direction of the finding is the durable part",
     "verify": false
    },
    {
     "figure": "0.63 standard deviations",
-    "measures": "Two physics lessons, with expert prompts and pre-written solutions{6}",
+    "measures": "Two physics lessons, with expert prompts and pre-written solutions",
     "notShow": "Retention, or results on other content",
     "verify": false
    }
@@ -610,38 +630,38 @@ window.WATERSHED_CASES = {
    {
     "stage": "Inputs",
     "what": "staff time, AI literacy training, and program-level assessment maps.",
-    "assumes": "Assumes training reaches staff.{4}",
+    "assumes": "Assumes training reaches staff.",
     "verify": false
    },
    {
     "stage": "Activities",
     "what": "redesign assessment by program, with a few secure points and openly AI-supported tasks elsewhere.",
-    "assumes": "Assumes detection cannot carry validity, so design must.{3,7}",
+    "assumes": "Assumes detection cannot carry validity, so design must.",
     "verify": false
    },
    {
     "stage": "Outputs",
     "what": "clear AI rules per task, tutors with guardrails, and reviewed accessible media.",
-    "assumes": "Assumes guardrails prevent the harm seen with unrestricted chatbots.{1}",
+    "assumes": "Assumes guardrails prevent the harm seen with unrestricted chatbots.",
     "verify": false
    },
    {
     "stage": "Outcomes",
     "what": "students learn with AI and retain it, with fewer false accusations.",
-    "assumes": "Assumes gains last beyond a few weeks, which is untested.{6}",
+    "assumes": "Assumes gains last beyond a few weeks, which is untested.",
     "verify": false
    },
    {
     "stage": "Impact",
     "what": "credentials still certify learning, fairly, for every student.",
-    "assumes": "Assumes gaps in access and confidence narrow.{2}",
+    "assumes": "Assumes gaps in access and confidence narrow.",
     "verify": false
    }
   ],
   "weakest": {
    "from": 3,
    "to": 4,
-   "text": "the trials cited here ran from two lessons to six weeks, so lasting effects were not measured.{6,8}",
+   "text": "the trials cited here ran from two lessons to six weeks, so lasting effects were not measured.",
    "verify": false
   },
   "effort": [
