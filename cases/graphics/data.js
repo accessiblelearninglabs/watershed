@@ -294,7 +294,7 @@ window.WATERSHED_CASES = {
    },
    {
     "figure": "82 trials",
-    "measures": "Outcomes across trials of community-based worker programmes",
+    "measures": "Outcomes across trials of community-based worker programs",
     "notShow": "Whether trial effects hold in routine services, which often give less support"
    },
    {
@@ -358,7 +358,7 @@ window.WATERSHED_CASES = {
       "text": "Across 162 studies, training produced medium-to-large effects at every level, from reactions to results."
      },
      {
-      "text": "Across 139 government-funded teacher training programmes in 14 countries, most differed sharply from the features of programmes shown to raise learning, with fewer chances to practise and less follow-up."
+      "text": "Across 139 government-funded teacher training programs in 14 countries, most differed sharply from the features of programs shown to raise learning, with fewer chances to practise and less follow-up."
      }
     ],
     "could": "knowing which programs change practice directs training effort to what works."
@@ -367,7 +367,7 @@ window.WATERSHED_CASES = {
     "name": "Neglectedness",
     "findings": [
      {
-      "text": "Few teacher training programmes worldwide are evaluated, and the results of those that are vary widely."
+      "text": "Few teacher training programs worldwide are evaluated, and the results of those that are vary widely."
      }
     ],
     "could": "building evaluation in from the start is where design can act."
@@ -397,9 +397,9 @@ window.WATERSHED_CASES = {
     "notShow": "How often evaluation is done well, or for most programs"
    },
    {
-    "figure": "139 programmes in 14 countries",
-    "measures": "Features of government-funded teacher training at scale, compared with 33 rigorously evaluated programmes",
-    "notShow": "Learning outcomes of the at-scale programmes themselves"
+    "figure": "139 programs in 14 countries",
+    "measures": "Features of government-funded teacher training at scale, compared with 33 rigorously evaluated programs",
+    "notShow": "Learning outcomes of the at-scale programs themselves"
    }
   ],
   "links": [
