@@ -9,17 +9,20 @@
 <link href="https://fonts.googleapis.com/css2?family=Asap:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/watershed.css">
 <style>
-  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); margin-top: 24px; }
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); margin-top: 24px; }
   .stat { background: var(--white); padding: 24px; display: flex; flex-direction: column; gap: 8px; }
-  .figure { font-size: 2.6rem; font-weight: 500; line-height: 1; color: var(--blue); }
+  .stat .tag { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin: 0; }
+  .figure { font-size: 2.4rem; font-weight: 500; line-height: 1; color: var(--blue); margin: 0; }
   .stat p.what { font-size: 0.95rem; }
-  .stat details { margin-top: 8px; border-top: 1px solid var(--line); padding-top: 10px; }
+  .stat details { margin-top: auto; border-top: 1px solid var(--line); padding-top: 10px; }
   .stat summary { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; font-size: 0.9rem; font-weight: 500; color: var(--navy); }
   .stat summary::before { content: "+"; display: inline-block; width: 1em; font-weight: 600; }
   .stat details[open] summary::before { content: "−"; }
   .stat dl { margin: 4px 0 0; font-size: 0.88rem; }
   .stat dt { font-weight: 600; color: var(--navy-deep); margin-top: 8px; }
   .stat dd { margin: 2px 0 0; color: var(--muted); }
+  @media (max-width: 799px) { .stats { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 479px) { .stats { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -27,36 +30,54 @@
   <h2 id="t" class="sr-only">What is known does not reliably become what people can do.</h2>
 
   <div class="stats">
-    <section class="stat" aria-labelledby="s2">
-      <p class="figure" id="s1">16.5%</p>
-      <p class="what">of people with major depressive disorder, across 21 countries, received minimally adequate treatment.</p>
+    <section class="stat" aria-labelledby="s1">
+      <p class="tag">Reach</p>
+      <p class="figure" id="s1">4.5 billion</p>
+      <p class="what">people, more than half the world's population, were not fully covered by essential health services in 2021.</p>
       <details>
         <summary>What this measures</summary>
         <dl>
           <dt>Measures</dt>
-          <dd>Household surveys of 51,547 people in the WHO World Mental Health Surveys. About 1 in 5 received minimally adequate treatment in high-income countries, and 1 in 27 in low- and lower-middle-income countries.</dd>
+          <dd>Coverage of essential health services, tracked by WHO and the World Bank. Progress slowed after 2015, with no improvement from 2019 to 2021.</dd>
           <dt>Does not show</dt>
-          <dd>Countries outside the 21 surveyed, or change since the surveys were run.</dd>
+          <dd>Whether the care people did receive was of good quality.</dd>
         </dl>
       </details>
     </section>
 
-    <section class="stat" aria-labelledby="s1">
-      <p class="figure" id="s2">54.9%</p>
-      <p class="what">of recommended care received by adults in the United States, across 30 conditions: a high-income example.</p>
+    <section class="stat" aria-labelledby="s2">
+      <p class="tag">Quality</p>
+      <p class="figure" id="s2">5 million</p>
+      <p class="what">deaths a year in 137 low- and middle-income countries from poor-quality care, against 3.6 million from not using care at all.</p>
       <details>
         <summary>What this measures</summary>
         <dl>
           <dt>Measures</dt>
-          <dd>Recommended care received, by condition. It ranged from 78.7% for cataract to 10.5% for alcohol dependence.</dd>
+          <dd>Deaths in 2016 from 61 conditions that health care can treat, modelled from coverage and quality data. Where care was received, its quality decided more deaths than access did.</dd>
           <dt>Does not show</dt>
-          <dd>Care in other countries, or care today. The study was published in 2003.</dd>
+          <dd>A count. The estimate rests on modelled quality, and the authors give wide uncertainty ranges.</dd>
         </dl>
       </details>
     </section>
 
     <section class="stat" aria-labelledby="s3">
-      <p class="figure" id="s3">~17 years</p>
+      <p class="tag">Learning</p>
+      <p class="figure" id="s3">70%</p>
+      <p class="what">of ten-year-olds in low- and middle-income countries could not read and understand a simple text in 2022, up from 57% before the pandemic.</p>
+      <details>
+        <summary>What this measures</summary>
+        <dl>
+          <dt>Measures</dt>
+          <dd>Learning poverty, a joint estimate by the World Bank, UNESCO and UNICEF that combines children out of school with children in school who fall below a minimum reading level.</dd>
+          <dt>Does not show</dt>
+          <dd>High-income countries, or subjects other than reading. It is a simulation for 2022, not a survey.</dd>
+        </dl>
+      </details>
+    </section>
+
+    <section class="stat" aria-labelledby="s4">
+      <p class="tag">Time</p>
+      <p class="figure" id="s4">~17 years</p>
       <p class="what">from research to practice: a figure several studies reached while measuring different stages of the process.</p>
       <details>
         <summary>What this measures</summary>
@@ -73,14 +94,14 @@
   <footer class="sources" aria-label="Sources">
     <p>Sources</p>
     <ul>
-      <li>McGlynn, E. A., et al. (2003). The quality of health care delivered to adults in the United States. <em>New England Journal of Medicine, 348</em>(26), 2635–2645. <a href="https://doi.org/10.1056/NEJMsa022615">doi.org/10.1056/NEJMsa022615</a></li>
+      <li>Kruk, M. E., Gage, A. D., Joseph, N. T., Danaei, G., García-Saisó, S., &amp; Salomon, J. A. (2018). Mortality due to low-quality health systems in the universal health coverage era: A systematic analysis of amenable deaths in 137 countries. <em>Lancet, 392</em>(10160), 2203–2212. <a href="https://doi.org/10.1016/S0140-6736(18)31668-4">doi.org/10.1016/S0140-6736(18)31668-4</a></li>
       <li>Morris, Z. S., Wooding, S., &amp; Grant, J. (2011). The answer is 17 years, what is the question: Understanding time lags in translational research. <em>Journal of the Royal Society of Medicine, 104</em>(12), 510–520. <a href="https://doi.org/10.1258/jrsm.2011.110180">doi.org/10.1258/jrsm.2011.110180</a></li>
-      <li>Thornicroft, G., et al. (2017). Undertreatment of people with major depressive disorder in 21 countries. <em>British Journal of Psychiatry, 210</em>(2), 119–124. <a href="https://doi.org/10.1192/bjp.bp.116.188078">doi.org/10.1192/bjp.bp.116.188078</a></li>
+      <li>World Bank, UNESCO, UNICEF, FCDO, USAID, &amp; Bill &amp; Melinda Gates Foundation. (2022). <em>The state of global learning poverty: 2022 update</em>. World Bank.</li>
+      <li>World Health Organization &amp; World Bank. (2023). <em>Tracking universal health coverage: 2023 global monitoring report</em>. WHO. <a href="http://hdl.handle.net/10986/40348">hdl.handle.net/10986/40348</a></li>
     </ul>
   </footer>
 </main>
 <script>
-
 (function () {
   if (window.parent === window) return;
   var last = 0;
