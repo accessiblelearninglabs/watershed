@@ -141,6 +141,9 @@ window.WATERSHED_CASES = {
     "name": "Neglectedness",
     "findings": [
      {
+      "text": "In a US national cohort, 28% of college students who had received special education in high school told their college they had a disability, and 19% received accommodations, against 87% in high school."
+     },
+     {
       "text": "In February 2026, 95.9% of the top million home pages had detected WCAG 2 failures, up from 94.8% in 2025."
      }
     ],
@@ -149,6 +152,12 @@ window.WATERSHED_CASES = {
    {
     "name": "Solvability",
     "findings": [
+     {
+      "text": "Supports open to all students, such as writing and maths centres, were linked to persistence for students with disabilities."
+     },
+     {
+      "text": "Across more than 100 studies, captions improved comprehension of video for viewers in general, not only deaf and hard-of-hearing viewers."
+     },
      {
       "text": "Evidence for UDL as a whole framework is contested; the studies cited for it mostly support single techniques."
      }
@@ -166,6 +175,11 @@ window.WATERSHED_CASES = {
     "figure": "One third of first-year students",
     "measures": "Self-report in a survey of over 11,000 students at 39 universities",
     "notShow": "All Canadian students, or students at colleges"
+   },
+   {
+    "figure": "28% told their college",
+    "measures": "A US national cohort who had received special education in high school, followed up to eight years after leaving",
+    "notShow": "Students never identified in school, or students today"
    },
    {
     "figure": "95.9% of home pages",
@@ -340,6 +354,9 @@ window.WATERSHED_CASES = {
    {
     "name": "Scale",
     "findings": [
+     {
+      "text": "Across 162 studies, training produced medium-to-large effects at every level, from reactions to results."
+     },
      {
       "text": "Across 139 government-funded teacher training programmes in 14 countries, most differed sharply from the features of programmes shown to raise learning, with fewer chances to practise and less follow-up."
      }
